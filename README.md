@@ -17,7 +17,7 @@ Registra um novo usuário.
 
 Retorno:
 - `201` quando o usuário for registrado.
-
+- `400` quando o Email já estava registrado
 
 ### `POST /login`
 
@@ -49,3 +49,8 @@ Retorna uma lista de músicas protegida por JWT.
 Retorno:
 - `200` com uma lista de músicas.
 - `403` se o token não for fornecido ou for inválido.
+
+
+### `GET /api-docs`
+
+Abre a interface do Swagger UI para visualizar e testar a documentação da API

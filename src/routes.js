@@ -93,7 +93,7 @@ router.post('/login', (req, res) => {
     return res.status(401).json({ error: 'Credenciais inválidas.' });
   }
   const token = jwt.sign({ email }, process.env.SECRET_JWT, { expiresIn: '1h' });
-  res.json({ token , message: 'Logado com sucesso!' });
+  res.status(200).json({ token , message: 'Logado com sucesso!' });
   
 });
 
@@ -128,7 +128,7 @@ router.post('/login', (req, res) => {
  *         description: Token não fornecido ou inválido
  */
 router.get('/musicas', autenticarJWT, (req, res) => {
-  return res.json([
+  return res.status(200).json([
     { id: 1, titulo: 'Música A', artista: 'DJ A' },
     { id: 2, titulo: 'Música B', artista: 'DJ B' },
   ]);
