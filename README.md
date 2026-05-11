@@ -54,3 +54,5 @@ Retorno:
 ### `GET /api-docs`
 
 Abre a interface do Swagger UI para visualizar e testar a documentação da API
+
+Link: https://dj-music-system.onrender.com/api-docs
