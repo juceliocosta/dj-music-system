@@ -35,10 +35,14 @@
     <ul id="musicasList"></ul>
 
     <script>
+      function loading(isLoading) {
+        document.body.style.cursor = isLoading ? 'wait' : 'default';
+      }
       document
         .getElementById("registerForm")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
+          loading(true);
           const email = document.getElementById("registerEmail").value;
           const password = document.getElementById("registerPassword").value;
           const response = await fetch("https://dj-music-system.onrender.com/register", {
@@ -52,12 +56,14 @@
           } else {
             alert(data.error);
           }
+          loading(false);
         });
 
       document
         .getElementById("loginForm")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
+          loading(true);
           const email = document.getElementById("loginEmail").value;
           const password = document.getElementById("loginPassword").value;
           const response = await fetch("https://dj-music-system.onrender.com/login", {
@@ -72,11 +78,13 @@
           } else {
             alert(data.error);
           }
+          loading(false);
         });
 
       document
         .getElementById("getMusicasBtn")
         .addEventListener("click", async () => {
+          loading(true);
           const token = localStorage.getItem("token");
           if (!token) {
             return alert("Por favor, faça login primeiro!");
@@ -96,6 +104,7 @@
           } else {
             alert(musicas.error);
           }
+          loading(false);
         });
     </script>
   </body>
