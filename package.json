@@ -12,7 +12,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest --forceExit",
-    "dev": "node --watch --env-file .env server.js",
+    "dev": "node --watch --env-file .env.example server.js",
     "start": "node server.js"
   },
   "keywords": [],
