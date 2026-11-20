@@ -25,15 +25,6 @@ const users = [];
  */
 //------------------------------------------------------
 
-// //exibir a página inicial index.html
-// router.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, '..', 'index.html'));
-// });
-
-
-
-
-
 
 /**
  * @swagger

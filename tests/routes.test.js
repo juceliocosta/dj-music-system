@@ -1,7 +1,7 @@
 const request = require("supertest");
 const app = require("../app");
 
-describe('POST /register', () => {
+describe('Frontend: POST /register', () => {
   it('deve registrar um novo usuário', async () => {
     const res = await request(app)
       .post('/register')
