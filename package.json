@@ -11,7 +11,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "node --env-file=.env.example ./node_modules/jest/bin/jest.js --forceExit",
+    "test": "jest --forceExit",
     "dev": "node --watch --env-file .env server.js",
     "start": "node --env-file .env server.js"
   },
