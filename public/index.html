@@ -8,6 +8,7 @@
 
   <body>
     <h1>DJ Music System</h1>
+    <a href="/api-docs">Documentação da API</a>
   <h2>Register</h2>
     <form id="registerForm">
       <input type="email" id="registerEmail" placeholder="Email" required />
@@ -39,13 +40,13 @@
         document.body.style.cursor = isLoading ? 'wait' : 'default';
       }
 
-      const isLocal =
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1";
+      // const isLocal =
+      //   window.location.hostname === "localhost" ||
+      //   window.location.hostname === "127.0.0.1";
 
-      const API_URL = isLocal
-        ? "http://localhost:3000"
-        : "https://dj-music-system.onrender.com";
+      // const API_URL = isLocal
+      //   ? "http://localhost:3000"
+      //   : "https://dj-music-system.onrender.com";
 
       document
         .getElementById("registerForm")
@@ -54,7 +55,7 @@
           loading(true);
           const email = document.getElementById("registerEmail").value;
           const password = document.getElementById("registerPassword").value;
-          const response = await fetch(`${API_URL}/register`, {
+          const response = await fetch(`/register`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
@@ -75,7 +76,7 @@
           loading(true);
           const email = document.getElementById("loginEmail").value;
           const password = document.getElementById("loginPassword").value;
-          const response = await fetch(`${API_URL}/login`, {
+          const response = await fetch(`/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
@@ -99,7 +100,7 @@
             loading(false)
             return alert("Por favor, faça login primeiro!");
           }
-          const response = await fetch(`${API_URL}/musicas`, {
+          const response = await fetch(`/musicas`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           const musicas = await response.json();

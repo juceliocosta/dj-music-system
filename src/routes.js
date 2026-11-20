@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
+const path = require('path');
 const { autenticarJWT } = require('./minddlewares/autenticarJWT');
 
 // Simulação de banco de dados em memória
@@ -23,6 +24,15 @@ const users = [];
  *   description: Gestão de músicas
  */
 //------------------------------------------------------
+
+// //exibir a página inicial index.html
+// router.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '..', 'index.html'));
+// });
+
+
+
+
 
 
 /**
