@@ -1,6 +1,6 @@
 # DJ Music System
 
-Atividade Prática - API simples para registro, login e consulta de músicas com autenticação JWT.
+Atividade Prática - aplicação simples para registro, login e consulta de músicas com autenticação JWT. O objetivo principal é colocar em prática os conhecimentos adiquiridos sobre implementar uma suite de testes automatizados e integrar um pipeline de Integração Contínua (CI/CD) com deploy automático.
 
 ## Endpoints
 
@@ -56,3 +56,28 @@ Retorno:
 Abre a interface do Swagger UI para visualizar e testar a documentação da API
 
 Link: https://dj-music-system.onrender.com/api-docs
+
+## Instruções para executar e testar localmente
+
+1. Clone o repositório
+
+```shell
+git clone https://github.com/juceliocosta/dj-music-system.git
+```
+
+2. Dentro do repositório, instale as dependências
+```shell
+npm install
+```
+
+3. Execute a suite de testes
+
+```shell
+npm run test
+```
+
+4. Inicialize a aplicação
+
+```shell
+npm run dev
+```
